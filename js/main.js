@@ -139,24 +139,28 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // 🎵 PLAYER CONFIGURATION 🎵
 const songs = [
   {
-    title: "El Toto Nay",
-    path: "../assets/music/mltsht alklwb.mp3",
+    title: "رايحة فين ياحاجة",
+    path: "../assets/music/رايحة فين ياحاجة.mp3",
   },
   {
-    title: "Ya Halawet El Manga",
-    path: "../assets/music/ya smra.mp3",
+    title: "يا نقاوة عيني",
+    path: "../assets/music/يا نقاوة عيني.mp3",
   },
   {
-    title: "Salmaly 3al Tromaay",
-    path: "../assets/music/gyby bywgany.mp3",
+    title: "أنا بنت عمك",
+    path: "../assets/music/أنا بنت عمك.mp3",
   },
   {
-    title: "Hasabna",
-    path: "../assets/music/darb alywy.mp3",
+    title: "يا مراكبي",
+    path: "../assets/music/يا مراكبي.mp3",
   },
   {
-    title: "Hassen Ya Ghoula",
-    path: "../assets/music/bomba.mp3",
+    title: "قرب يا عويس وتعالى حداي",
+    path: "../assets/music/قرب يا عويس وتعالى حداي.mp3",
+  },
+  {
+    title: "إطمني",
+    path: "../assets/music/إطمني.mp3",
   },
 ];
 // ------------------------------------
