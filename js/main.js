@@ -442,25 +442,31 @@ const videoModalOverlay = document.querySelector(".video-modal-overlay");
 
 // Function to convert YouTube URL to embed URL
 function getYouTubeEmbedUrl(url) {
-  // Handle different YouTube URL formats
   let videoId = "";
+  let listId = "";
 
-  // Format: https://www.youtube.com/watch?v=VIDEO_ID
-  if (url.includes("youtube.com/watch?v=")) {
+  // Extract Video ID
+  if (url.includes("v=")) {
     videoId = url.split("v=")[1].split("&")[0];
-  }
-  // Format: https://youtu.be/VIDEO_ID
-  else if (url.includes("youtu.be/")) {
+  } else if (url.includes("youtu.be/")) {
     videoId = url.split("youtu.be/")[1].split("?")[0];
-  }
-  // Format: https://www.youtube.com/embed/VIDEO_ID
-  else if (url.includes("youtube.com/embed/")) {
+  } else if (url.includes("youtube.com/embed/")) {
     videoId = url.split("embed/")[1].split("?")[0];
   }
 
-  return videoId
-    ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`
-    : "";
+  // Extract List ID (Playlist)
+  if (url.includes("list=")) {
+    listId = url.split("list=")[1].split("&")[0];
+  }
+
+  // Return the appropriate embed URL
+  if (videoId) {
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0${listId ? `&list=${listId}` : ""}`;
+  } else if (listId) {
+    return `https://www.youtube.com/embed/videoseries?list=${listId}&autoplay=1&rel=0`;
+  }
+
+  return "";
 }
 
 // Open video modal
